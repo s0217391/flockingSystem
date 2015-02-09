@@ -6,6 +6,9 @@ basic OpenGL demo taken from the NCCA SimpleDrawing demo
 #include <iostream>
 
 #include "ClothUi.h"
+
+#include "EcoSystem.h"
+
 int main(int argc, char **argv)
 {
   //*

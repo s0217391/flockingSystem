@@ -15,7 +15,7 @@ CXX           = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefau
 DEFINES       = -DQT5BUILD -DNGL_DEBUG -DDARWIN -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6 -Wall -W -fPIE $(DEFINES)
 CXXFLAGS      = -pipe -msse -msse2 -msse3 -arch x86_64 -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6 -Wall -W -Wno-unused-parameter -fPIE $(DEFINES)
-INCPATH       = -I../../../Applications/Qt/5.3/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include -I../../../NGL/include -I../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers -I../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -F/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib
+INCPATH       = -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/macx-clang -I. -Iinclude -I/usr/local/include -I/Users/pieterjanbartels/NGL/include -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers -Imoc -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/OpenGL.framework/Versions/A/Headers -I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/System/Library/Frameworks/AGL.framework/Headers -I. -F/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib
 LINK          = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++
 LFLAGS        = -headerpad_max_install_names -Wl,-syslibroot,/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk -mmacosx-version-min=10.6
 LIBS          = $(SUBLIBS) -F/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib -L/$(HOME)/NGL/lib -l NGL -framework QtOpenGL -framework QtWidgets -framework QtGui -framework QtCore -framework OpenGL -framework AGL 
@@ -52,121 +52,8 @@ OBJECTS       = obj/ClothUi.o \
 		obj/GLWindow.o \
 		obj/main.o \
 		obj/moc_ClothUi.o
-DIST          = ../../../Applications/Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/qdevice.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/device_config.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/shell-unix.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/unix.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/mac.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/macx.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base-mac.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/clang.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/clang-mac.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/qconfig.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt_functions.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt_config.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/spec_post.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/default_pre.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/resolve_config.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/default_post.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/sdk.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_post.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/objective_c.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/warn_on.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/resources.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/moc.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/unix/opengl.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/uic.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/unix/thread.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/rez.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/testcase_targets.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/exceptions.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/yacc.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/lex.prf \
+DIST          = .qmake.cache \
+		.qmake.stash \
 		FlockingSystem.pro src/ClothUi.cpp \
 		src/GLWindow.cpp \
 		src/main.cpp
@@ -212,242 +99,246 @@ all: Makefile $(TARGET)
 $(TARGET): ui_ClothUi.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
-Makefile: FlockingSystem.pro .qmake.cache ../../../Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf ../../../Applications/Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/qdevice.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/device_config.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/shell-unix.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/unix.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/mac.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/macx.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base-mac.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/clang.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/common/clang-mac.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/qconfig.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt_functions.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt_config.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/spec_post.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/default_pre.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/resolve_config.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/default_post.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/sdk.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_post.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/objective_c.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/warn_on.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/resources.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/moc.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/unix/opengl.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/uic.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/unix/thread.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/rez.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/testcase_targets.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/exceptions.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/yacc.prf \
-		../../../Applications/Qt/5.3/clang_64/mkspecs/features/lex.prf \
+Makefile: FlockingSystem.pro .qmake.cache /Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf /Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/spec_pre.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/qdevice.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/device_config.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/shell-unix.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/unix.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/mac.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/macx.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base-mac.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/clang.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/clang-mac.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/qconfig.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_clucene_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_platformsupport_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/qt_functions.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/qt_config.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/spec_post.prf \
+		.qmake.cache \
+		.qmake.stash \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/default_pre.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/resolve_config.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/default_post.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/sdk.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_post.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/objective_c.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/warn_on.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/qt.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/resources.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/moc.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/unix/opengl.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/uic.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/unix/thread.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/rez.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/testcase_targets.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/exceptions.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/yacc.prf \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/lex.prf \
 		FlockingSystem.pro \
 		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl \
 		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/QtWidgets.prl \
 		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/QtGui.prl \
 		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/QtCore.prl
 	$(QMAKE) -spec macx-clang CONFIG+=debug CONFIG+=x86_64 -o Makefile FlockingSystem.pro
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/spec_pre.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/qdevice.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/device_config.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/shell-unix.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/unix.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/mac.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/macx.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base-mac.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/clang.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/common/clang-mac.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/qconfig.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_clucene_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_platformsupport_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt_functions.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt_config.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/spec_post.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/default_pre.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/resolve_config.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/default_post.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/sdk.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_post.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/objective_c.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/warn_on.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/qt.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/resources.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/moc.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/unix/opengl.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/uic.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/unix/thread.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/mac/rez.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/testcase_targets.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/exceptions.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/yacc.prf:
-../../../Applications/Qt/5.3/clang_64/mkspecs/features/lex.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/spec_pre.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/qdevice.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/device_config.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/shell-unix.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/unix.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/mac.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/macx.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/gcc-base-mac.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/clang.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/common/clang-mac.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/qconfig.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bluetooth_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_bootstrap_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_clucene_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_concurrent_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_core_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_dbus_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_declarative_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designer_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_designercomponents_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_enginio_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_gui_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_help_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_macextras_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimedia_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_multimediawidgets_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_network_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_nfc_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_opengl_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_openglextensions_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_platformsupport_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_positioning_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_printsupport_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qml_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmldevtools_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qmltest_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_qtmultimediaquicktools_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quick_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickparticles_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_quickwidgets_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_script_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_scripttools_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sensors_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_serialport_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_sql_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_svg_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_testlib_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_uitools_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkit_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_webkitwidgets_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_websockets_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_widgets_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xml_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/modules/qt_lib_xmlpatterns_private.pri:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/qt_functions.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/qt_config.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/macx-clang/qmake.conf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/spec_post.prf:
+.qmake.cache:
+.qmake.stash:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/exclusive_builds.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/default_pre.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_pre.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/resolve_config.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/default_post.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/sdk.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/default_post.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/objective_c.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/warn_on.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/qt.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/resources.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/moc.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/unix/opengl.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/uic.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/unix/thread.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/mac/rez.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/testcase_targets.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/exceptions.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/yacc.prf:
+/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/features/lex.prf:
 FlockingSystem.pro:
 /Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/QtOpenGL.prl:
 /Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/QtWidgets.prl:
@@ -460,7 +351,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d obj/FlockingSystem1.0.0 || mkdir -p obj/FlockingSystem1.0.0
-	$(COPY_FILE) --parents $(DIST) obj/FlockingSystem1.0.0/ && $(COPY_FILE) --parents include/Agent.h include/ClothUi.h include/Flock.h include/FlockControl.h include/GLWindow.h include/IBehaviour.h include/IBrain.h obj/FlockingSystem1.0.0/ && $(COPY_FILE) --parents src/ClothUi.cpp src/GLWindow.cpp src/main.cpp obj/FlockingSystem1.0.0/ && $(COPY_FILE) --parents ui/ClothUi.ui obj/FlockingSystem1.0.0/ && (cd `dirname obj/FlockingSystem1.0.0` && $(TAR) FlockingSystem1.0.0.tar FlockingSystem1.0.0 && $(COMPRESS) FlockingSystem1.0.0.tar) && $(MOVE) `dirname obj/FlockingSystem1.0.0`/FlockingSystem1.0.0.tar.gz . && $(DEL_FILE) -r obj/FlockingSystem1.0.0
+	$(COPY_FILE) --parents $(DIST) obj/FlockingSystem1.0.0/ && $(COPY_FILE) --parents include/Agent.h include/ClothUi.h include/EcoSystem.h include/Flock.h include/FlockControl.h include/GLWindow.h include/IBehaviour.h include/IBrain.h obj/FlockingSystem1.0.0/ && $(COPY_FILE) --parents src/ClothUi.cpp src/GLWindow.cpp src/main.cpp obj/FlockingSystem1.0.0/ && $(COPY_FILE) --parents ui/ClothUi.ui obj/FlockingSystem1.0.0/ && (cd `dirname obj/FlockingSystem1.0.0` && $(TAR) FlockingSystem1.0.0.tar FlockingSystem1.0.0 && $(COMPRESS) FlockingSystem1.0.0.tar) && $(MOVE) `dirname obj/FlockingSystem1.0.0`/FlockingSystem1.0.0.tar.gz . && $(DEL_FILE) -r obj/FlockingSystem1.0.0
 
 
 clean:compiler_clean 
@@ -881,12 +772,12 @@ moc/moc_ClothUi.cpp: /usr/local/include/boost/shared_ptr.hpp \
 		/usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
 		/usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
 		/usr/local/include/boost/smart_ptr/detail/operator_bool.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		include/GLWindow.h \
-		../../../NGL/include/ngl/Camera.h \
-		../../../NGL/include/ngl/Types.h \
-		../../../NGL/include/ngl/glew.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Camera.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Types.h \
+		/Users/pieterjanbartels/NGL/include/ngl/glew.h \
 		/usr/local/include/boost/python.hpp \
 		/usr/local/include/boost/python/args.hpp \
 		/usr/local/include/boost/python/detail/prefix.hpp \
@@ -1661,29 +1552,29 @@ moc/moc_ClothUi.cpp: /usr/local/include/boost/shared_ptr.hpp \
 		/usr/local/include/boost/format/parsing.hpp \
 		/usr/local/include/boost/format/free_funcs.hpp \
 		/usr/local/include/boost/format/detail/unset_macros.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
-		../../../NGL/include/ngl/Vec4.h \
-		../../../NGL/include/ngl/Vec2.h \
-		../../../NGL/include/ngl/Vec3.h \
-		../../../NGL/include/ngl/Mat4.h \
-		../../../NGL/include/ngl/rapidxml/rapidxml.hpp \
-		../../../NGL/include/ngl/RibExport.h \
-		../../../NGL/include/ngl/Plane.h \
-		../../../NGL/include/ngl/Colour.h \
-		../../../NGL/include/ngl/Light.h \
-		../../../NGL/include/ngl/Material.h \
-		../../../NGL/include/ngl/Text.h \
-		../../../NGL/include/ngl/VertexArrayObject.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
-		../../../NGL/include/ngl/Transformation.h \
-		../../../NGL/include/ngl/NGLassert.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec2.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec3.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Mat4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/rapidxml/rapidxml.hpp \
+		/Users/pieterjanbartels/NGL/include/ngl/RibExport.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Plane.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Colour.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Light.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Material.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Text.h \
+		/Users/pieterjanbartels/NGL/include/ngl/VertexArrayObject.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Transformation.h \
+		/Users/pieterjanbartels/NGL/include/ngl/NGLassert.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
 		include/ClothUi.h
 	/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/mkspecs/macx-clang -I/Users/pieterjanbartels/Documents/MSCAVEF/flockingSystem -I/Users/pieterjanbartels/Documents/MSCAVEF/flockingSystem/include -I/usr/local/include -I/Users/pieterjanbartels/NGL/include -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Headers -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Headers -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Headers -I/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Headers -F/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib include/ClothUi.h -o moc/moc_ClothUi.cpp
 
@@ -2101,12 +1992,12 @@ obj/ClothUi.o: src/ClothUi.cpp include/ClothUi.h \
 		/usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
 		/usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
 		/usr/local/include/boost/smart_ptr/detail/operator_bool.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		include/GLWindow.h \
-		../../../NGL/include/ngl/Camera.h \
-		../../../NGL/include/ngl/Types.h \
-		../../../NGL/include/ngl/glew.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Camera.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Types.h \
+		/Users/pieterjanbartels/NGL/include/ngl/glew.h \
 		/usr/local/include/boost/python.hpp \
 		/usr/local/include/boost/python/args.hpp \
 		/usr/local/include/boost/python/detail/prefix.hpp \
@@ -2881,38 +2772,38 @@ obj/ClothUi.o: src/ClothUi.cpp include/ClothUi.h \
 		/usr/local/include/boost/format/parsing.hpp \
 		/usr/local/include/boost/format/free_funcs.hpp \
 		/usr/local/include/boost/format/detail/unset_macros.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
-		../../../NGL/include/ngl/Vec4.h \
-		../../../NGL/include/ngl/Vec2.h \
-		../../../NGL/include/ngl/Vec3.h \
-		../../../NGL/include/ngl/Mat4.h \
-		../../../NGL/include/ngl/rapidxml/rapidxml.hpp \
-		../../../NGL/include/ngl/RibExport.h \
-		../../../NGL/include/ngl/Plane.h \
-		../../../NGL/include/ngl/Colour.h \
-		../../../NGL/include/ngl/Light.h \
-		../../../NGL/include/ngl/Material.h \
-		../../../NGL/include/ngl/Text.h \
-		../../../NGL/include/ngl/VertexArrayObject.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
-		../../../NGL/include/ngl/Transformation.h \
-		../../../NGL/include/ngl/NGLassert.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec2.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec3.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Mat4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/rapidxml/rapidxml.hpp \
+		/Users/pieterjanbartels/NGL/include/ngl/RibExport.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Plane.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Colour.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Light.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Material.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Text.h \
+		/Users/pieterjanbartels/NGL/include/ngl/VertexArrayObject.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Transformation.h \
+		/Users/pieterjanbartels/NGL/include/ngl/NGLassert.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
 		ui_ClothUi.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/ClothUi.o src/ClothUi.cpp
 
 obj/GLWindow.o: src/GLWindow.cpp include/GLWindow.h \
-		../../../NGL/include/ngl/Camera.h \
-		../../../NGL/include/ngl/Types.h \
-		../../../NGL/include/ngl/glew.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Camera.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Types.h \
+		/Users/pieterjanbartels/NGL/include/ngl/glew.h \
 		/usr/local/include/boost/python.hpp \
 		/usr/local/include/boost/python/args.hpp \
 		/usr/local/include/boost/python/detail/prefix.hpp \
@@ -4080,42 +3971,42 @@ obj/GLWindow.o: src/GLWindow.cpp include/GLWindow.h \
 		/usr/local/include/boost/format/parsing.hpp \
 		/usr/local/include/boost/format/free_funcs.hpp \
 		/usr/local/include/boost/format/detail/unset_macros.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
-		../../../NGL/include/ngl/Vec4.h \
-		../../../NGL/include/ngl/Vec2.h \
-		../../../NGL/include/ngl/Vec3.h \
-		../../../NGL/include/ngl/Mat4.h \
-		../../../NGL/include/ngl/rapidxml/rapidxml.hpp \
-		../../../NGL/include/ngl/RibExport.h \
-		../../../NGL/include/ngl/Plane.h \
-		../../../NGL/include/ngl/Colour.h \
-		../../../NGL/include/ngl/Light.h \
-		../../../NGL/include/ngl/Material.h \
-		../../../NGL/include/ngl/Text.h \
-		../../../NGL/include/ngl/VertexArrayObject.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
-		../../../NGL/include/ngl/Transformation.h \
-		../../../NGL/include/ngl/NGLassert.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
-		../../../NGL/include/ngl/Quaternion.h \
-		../../../NGL/include/ngl/NGLInit.h \
-		../../../NGL/include/ngl/Singleton.h \
-		../../../NGL/include/ngl/VAOPrimitives.h \
-		../../../NGL/include/ngl/ShaderLib.h \
-		../../../NGL/include/ngl/Shader.h \
-		../../../NGL/include/ngl/ShaderProgram.h \
-		../../../NGL/include/ngl/Util.h \
-		../../../NGL/include/ngl/Mat3.h
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec2.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec3.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Mat4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/rapidxml/rapidxml.hpp \
+		/Users/pieterjanbartels/NGL/include/ngl/RibExport.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Plane.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Colour.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Light.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Material.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Text.h \
+		/Users/pieterjanbartels/NGL/include/ngl/VertexArrayObject.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Transformation.h \
+		/Users/pieterjanbartels/NGL/include/ngl/NGLassert.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Quaternion.h \
+		/Users/pieterjanbartels/NGL/include/ngl/NGLInit.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Singleton.h \
+		/Users/pieterjanbartels/NGL/include/ngl/VAOPrimitives.h \
+		/Users/pieterjanbartels/NGL/include/ngl/ShaderLib.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Shader.h \
+		/Users/pieterjanbartels/NGL/include/ngl/ShaderProgram.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Util.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Mat3.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/GLWindow.o src/GLWindow.cpp
 
-obj/main.o: src/main.cpp ../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
+obj/main.o: src/main.cpp /Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QApplication \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qapplication.h \
 		include/ClothUi.h \
 		/usr/local/include/boost/shared_ptr.hpp \
 		/usr/local/include/boost/smart_ptr/shared_ptr.hpp \
@@ -4510,12 +4401,12 @@ obj/main.o: src/main.cpp ../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.fra
 		/usr/local/include/boost/smart_ptr/detail/sp_convertible.hpp \
 		/usr/local/include/boost/smart_ptr/detail/sp_nullptr_t.hpp \
 		/usr/local/include/boost/smart_ptr/detail/operator_bool.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
-		../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/QMainWindow \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtWidgets.framework/Versions/5/Headers/qmainwindow.h \
 		include/GLWindow.h \
-		../../../NGL/include/ngl/Camera.h \
-		../../../NGL/include/ngl/Types.h \
-		../../../NGL/include/ngl/glew.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Camera.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Types.h \
+		/Users/pieterjanbartels/NGL/include/ngl/glew.h \
 		/usr/local/include/boost/python.hpp \
 		/usr/local/include/boost/python/args.hpp \
 		/usr/local/include/boost/python/detail/prefix.hpp \
@@ -5290,29 +5181,29 @@ obj/main.o: src/main.cpp ../../../Applications/Qt/5.3/clang_64/lib/QtWidgets.fra
 		/usr/local/include/boost/format/parsing.hpp \
 		/usr/local/include/boost/format/free_funcs.hpp \
 		/usr/local/include/boost/format/detail/unset_macros.hpp \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
-		../../../NGL/include/ngl/Vec4.h \
-		../../../NGL/include/ngl/Vec2.h \
-		../../../NGL/include/ngl/Vec3.h \
-		../../../NGL/include/ngl/Mat4.h \
-		../../../NGL/include/ngl/rapidxml/rapidxml.hpp \
-		../../../NGL/include/ngl/RibExport.h \
-		../../../NGL/include/ngl/Plane.h \
-		../../../NGL/include/ngl/Colour.h \
-		../../../NGL/include/ngl/Light.h \
-		../../../NGL/include/ngl/Material.h \
-		../../../NGL/include/ngl/Text.h \
-		../../../NGL/include/ngl/VertexArrayObject.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
-		../../../NGL/include/ngl/Transformation.h \
-		../../../NGL/include/ngl/NGLassert.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
-		../../../Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
-		../../../Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLContext \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/qgl.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec2.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Vec3.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Mat4.h \
+		/Users/pieterjanbartels/NGL/include/ngl/rapidxml/rapidxml.hpp \
+		/Users/pieterjanbartels/NGL/include/ngl/RibExport.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Plane.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Colour.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Light.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Material.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Text.h \
+		/Users/pieterjanbartels/NGL/include/ngl/VertexArrayObject.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QFont \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qfont.h \
+		/Users/pieterjanbartels/NGL/include/ngl/Transformation.h \
+		/Users/pieterjanbartels/NGL/include/ngl/NGLassert.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/QEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtCore.framework/Versions/5/Headers/qcoreevent.h \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtOpenGL.framework/Versions/5/Headers/QGLWidget \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/QResizeEvent \
+		/Users/pieterjanbartels/Applications/Qt/5.3/clang_64/lib/QtGui.framework/Versions/5/Headers/qevent.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj/main.o src/main.cpp
 
 obj/moc_ClothUi.o: moc/moc_ClothUi.cpp 
