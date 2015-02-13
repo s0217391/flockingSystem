@@ -2,8 +2,8 @@
  * This class represents the user interface for the cloth sim application.
  */
 
-#ifndef _CLOTHUI_H_
-#define _CLOTHUI_H_
+#ifndef _FLOCKUI_H_
+#define _FLOCKUI_H_
 
 #include "boost/shared_ptr.hpp"
 #include "QMainWindow"
@@ -14,20 +14,20 @@ namespace Ui {
 class MainWindow;
 }
 
-class ClothUi: public QMainWindow
+class FlockUi: public QMainWindow
 {
   Q_OBJECT
 
 public:
   //constructor
-  explicit ClothUi(QWidget *parent = 0);
-  ~ClothUi();
+  explicit FlockUi(QWidget *parent = 0);
+  ~FlockUi();
 
 private:
 	//The interface
 	Ui::MainWindow *m_ui;
 	// The OpenGL window, which will be part of the interface
-    GLWindow *m_gl;
+	GLWindow *m_gl;
 
 
 
@@ -36,4 +36,4 @@ private slots :
 
 };
 
-#endif // CLOTHUI_H
+#endif // FLOCKUI_H

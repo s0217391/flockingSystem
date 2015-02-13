@@ -29,7 +29,7 @@ SOURCES+= $$PWD/src/*.cpp
 HEADERS+= $$PWD/include/*.h
 
 # add the Qt form <------------------------------- This is for the UI
-FORMS += ui/ClothUi.ui
+FORMS += ui/FlockUi.ui
 
 # and add the include dir into the search path for Qt and make
 INCLUDEPATH +=./include

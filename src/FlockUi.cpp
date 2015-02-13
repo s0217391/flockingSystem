@@ -1,13 +1,13 @@
 // Implementation of the UI functions
 
-#include "ClothUi.h"
-#include "ui_ClothUi.h"
+#include "FlockUi.h"
+#include "ui_FlockUi.h"
 #include <QApplication>
 #include <set>
 #include <string>
 
 // Constructor - links the ui to the code
-ClothUi::ClothUi(QWidget *parent) :QMainWindow(parent),  m_ui(new Ui::MainWindow)
+FlockUi::FlockUi(QWidget *parent) :QMainWindow(parent),  m_ui(new Ui::MainWindow)
 {
   // set up th eUI
   m_ui->setupUi(this);
@@ -23,7 +23,7 @@ ClothUi::ClothUi(QWidget *parent) :QMainWindow(parent),  m_ui(new Ui::MainWindow
 }
 
 //dtor
-ClothUi::~ClothUi()
+FlockUi::~FlockUi()
 {
   delete m_ui;
 }

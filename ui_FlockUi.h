@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'ClothUi.ui'
+** Form generated from reading UI file 'FlockUi.ui'
 **
-** Created by: Qt User Interface Compiler version 5.3.2
+** Created by: Qt User Interface Compiler version 5.3.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef UI_CLOTHUI_H
-#define UI_CLOTHUI_H
+#ifndef UI_FLOCKUI_H
+#define UI_FLOCKUI_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -60,4 +60,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // UI_CLOTHUI_H
+#endif // UI_FLOCKUI_H

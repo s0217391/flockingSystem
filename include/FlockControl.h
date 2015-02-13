@@ -2,7 +2,7 @@
 #define FLOCKCONTROL_H
 
 
-//////////////////////// THIS MIGHT BE UNNECESSARY
+//////////////////////// THIS FILE MIGHT BE UNNECESSARY
 
 #include <vector>
 

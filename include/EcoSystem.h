@@ -18,10 +18,12 @@ class EcoSystem
 public:
   // EcoSystem is the owner of these elements and thus the best place to initialize the flocks
   // In the future this will be done by a factory class
+  // returns index of the flock
   int createNewFlock();
   // Add one agent to the flock. At the moment, all flock members are similar and can be best initialized by the flock.
   // This will need start position and velocity tho.
-  int addAgentToFlock(int _flock);
+  // returns index of the agent
+  inline int addAgentToFlock(int _flock) { return m_flocks[_flock].createAgent(); }
 
   void updateSystem();
 
