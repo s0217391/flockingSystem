@@ -1,8 +1,11 @@
 #ifndef IBRAIN_H
 #define IBRAIN_H
 
+#include <vector>
+
 #include "Agent.h"
 #include "IBehaviour.h"
+#include "ExplicitEulerIntegrator.h"
 
 
 //Forward Declaration
@@ -20,7 +23,21 @@ class IBrain
 {
 public:
   // has to update agent but nothing else!!
+  //   pointer to ecosystem, so "this" can be passed
   virtual void updateAgent(Agent & io_agent, const EcoSystem * _system, const std::vector<const IBehaviour *> & _behaviours) const = 0;
+
+protected:
+  inline IBrain() : m_integrator(0.02) {;}
+  ExplicitEulerIntegrator m_integrator;
+};
+
+class AverageBrain : public IBrain
+{
+public:
+  inline AverageBrain() : IBrain() {;}
+
+  // has to update agent but nothing else!!
+  virtual void updateAgent(Agent & io_agent, const EcoSystem * _system, const std::vector<const IBehaviour *> & _behaviours) const;
 };
 
 #endif // IBRAIN_H

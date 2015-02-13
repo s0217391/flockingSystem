@@ -1,3 +1,5 @@
+#include <ngl/Random.h>
+
 #include "Flock.h"
 
 //Flock owns behaviours and brain!
@@ -10,8 +12,14 @@ Flock::~Flock() // delete behaviours and brain
 // Flock owns the agents, so it creates them as well. will happen in a factory class later on
 int Flock::createAgent()
 {
-  //create new agent, returns its index in the list.
-  return 0;
+  ngl::Random * rand = ngl::Random::instance();
+
+  ngl::Vec3 pos = 100 * rand->getRandomVec3();
+  ngl::Vec3 vel = rand->getRandomVec3();
+  Agent newA(pos, vel);
+
+  m_agents.push_back(newA);
+  return m_agents.size() - 1;
 }
 
 
