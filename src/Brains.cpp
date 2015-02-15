@@ -1,6 +1,6 @@
 #include "IBrain.h"
 
-void AverageBrain::updateAgent(Agent &io_agent, const EcoSystem * _system, const std::vector<const IBehaviour *> & _behaviours) const
+void AverageBrain::updateAgent(Agent & io_agent, const EcoSystem * _system, const std::vector<IBehaviour *> & _behaviours) const
 {
   ngl::Vec3 result;
   for(size_t i = 0; i < _behaviours.size(); ++i)

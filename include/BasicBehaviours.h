@@ -1,28 +1,28 @@
 #ifndef BASICBEHAVIOURS_H
 #define BASICBEHAVIOURS_H
 
-#include "IBrain.h"
+#include "IBehaviour.h"
 
-class AlignmentBehaviour
+class AlignmentBehaviour : public IBehaviour
 {
 public:
-  inline AlignmentBehaviour() : IBrain() {;}
+  inline AlignmentBehaviour() : IBehaviour() {;}
 
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const;
 };
 
-class SeparationBehaviour
+class SeparationBehaviour : public IBehaviour
 {
 public:
-  inline SeparationBehaviour() : IBrain() {;}
+  inline SeparationBehaviour() : IBehaviour() {;}
 
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const;
 };
 
-class CohesionBehaviour
+class CohesionBehaviour : public IBehaviour
 {
 public:
-  inline CohesionBehaviour() : IBrain() {;}
+  inline CohesionBehaviour() : IBehaviour() {;}
 
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const;
 };

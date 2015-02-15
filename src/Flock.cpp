@@ -16,7 +16,7 @@ int Flock::createAgent()
 
   ngl::Vec3 pos = 100 * rand->getRandomVec3();
   ngl::Vec3 vel = rand->getRandomVec3();
-  Agent newA(pos, vel);
+  Agent newA(m_agents.size(), c_flockID, pos, vel);
 
   m_agents.push_back(newA);
   return m_agents.size() - 1;
@@ -38,4 +38,13 @@ void Flock::setBrain(IBrain * _brain)
 {
   delete m_brain;
   m_brain = _brain;
+}
+
+
+void Flock::updateFlock(EcoSystem * _eSystem)
+{
+  for(size_t i = 0; i < m_agents.size(); ++i)
+  {
+    m_brain->updateAgent(m_agents[i], _eSystem, m_behaviours);
+  }
 }
