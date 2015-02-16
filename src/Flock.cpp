@@ -14,8 +14,8 @@ int Flock::createAgent()
 {
   ngl::Random * rand = ngl::Random::instance();
 
-  ngl::Vec3 pos = 100 * rand->getRandomVec3();
-  ngl::Vec3 vel = rand->getRandomVec3();
+  ngl::Vec3 pos = 1 * rand->getRandomVec3();
+  ngl::Vec3 vel = 1 * rand->getRandomVec3();
   Agent newA(m_agents.size(), c_flockID, pos, vel);
 
   m_agents.push_back(newA);
@@ -36,7 +36,7 @@ void Flock::cleanBehaviours()
 // Flock is owner of his brain!! delete the old one
 void Flock::setBrain(IBrain * _brain)
 {
-  delete m_brain;
+  if(m_brain != NULL) delete m_brain;
   m_brain = _brain;
 }
 

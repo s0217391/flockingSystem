@@ -49,7 +49,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "PJ's Cloth Sim", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "PJ's Flocking Sim", 0));
     } // retranslateUi
 
 };

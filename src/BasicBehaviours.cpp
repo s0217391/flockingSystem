@@ -13,5 +13,5 @@ ngl::Vec3 SeparationBehaviour::computeForceUpdate(const Agent & _agent, const Ec
 
 ngl::Vec3 CohesionBehaviour::computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const
 {
-  return ngl::Vec3();
+  return ngl::Vec3(1, 0, 0);
 }

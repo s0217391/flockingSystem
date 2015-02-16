@@ -13,4 +13,5 @@ void AverageBrain::updateAgent(Agent & io_agent, const EcoSystem * _system, cons
   }
 
   io_agent.setSteeringForce(result);
+  m_integrator.UpdateAgent(io_agent);
 }

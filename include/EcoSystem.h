@@ -34,6 +34,8 @@ public:
 
   void updateSystem();
 
+  void getAgentStates(std::vector<ngl::Vec3> & io_positions, std::vector<ngl::Vec3> & io_velocities);
+
 private:
   std::vector<Flock> m_flocks;
 };

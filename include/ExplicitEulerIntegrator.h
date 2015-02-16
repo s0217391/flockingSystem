@@ -8,7 +8,7 @@ class ExplicitEulerIntegrator
 public:
     inline ExplicitEulerIntegrator(float _timestep) : m_timestep(_timestep) {;}
 
-    void UpdateAgent(Agent & io_agent);
+    void UpdateAgent(Agent & io_agent) const;
 
 private:
     float m_timestep;

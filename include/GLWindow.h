@@ -22,6 +22,8 @@
 #include "QGLWidget"
 #include "QResizeEvent"
 
+#include "EcoSystem.h"
+
 class GLWindow : public QGLWidget
 {
 
@@ -153,6 +155,13 @@ private :
   // zoom and rotate variables
   const float c_increment;
   const float c_zoom;
+
+
+
+  EcoSystem m_flocker;
+  std::vector<ngl::Vec3> m_positions;
+  std::vector<ngl::Vec3> m_velocities;
+  int m_agentNumber;
 };
 
 #endif

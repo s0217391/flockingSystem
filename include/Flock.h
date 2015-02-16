@@ -10,7 +10,7 @@
 class Flock
 {
 public:
-  inline Flock(int _id) : c_flockID(_id) {;}
+  inline Flock(int _id) : c_flockID(_id), m_brain(NULL) {;}
   ~Flock(); // delete behaviours and brain
 
   // Flock owns the agents, so it creates them as well. will happen in a factory class later on
