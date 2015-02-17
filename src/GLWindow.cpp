@@ -39,7 +39,7 @@ void GLWindow::initializeGL()
   //CAMERA ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Now we will create a basic Camera from the graphics library
   // First create Values for the camera position
-  ngl::Vec3 from(5,5,5);
+  ngl::Vec3 from(10,10,10);
   ngl::Vec3 to(0,0,0);
   ngl::Vec3 up(0,1,0);
   // now load to our new camera
@@ -123,14 +123,14 @@ void GLWindow::paintGL()
   ngl::Mat4 rotX;
   ngl::Mat4 rotY;
   // create the rotation matrices
-  //rotX.rotateX(m_spinXFace);
-  //rotY.rotateY(m_spinYFace);
+  rotX.rotateX(m_spinXFace);
+  rotY.rotateY(m_spinYFace);
   // multiply the rotations
-  //m_mouseGlobalTX=rotY*rotX;
+  m_mouseGlobalTX=rotY*rotX;
   // add the translations
-  //m_mouseGlobalTX.m_m[3][0] = m_modelPos.m_x;
-  //m_mouseGlobalTX.m_m[3][1] = m_modelPos.m_y;
-  //m_mouseGlobalTX.m_m[3][2] = m_modelPos.m_z;
+  m_mouseGlobalTX.m_m[3][0] = m_modelPos.m_x;
+  m_mouseGlobalTX.m_m[3][1] = m_modelPos.m_y;
+  m_mouseGlobalTX.m_m[3][2] = m_modelPos.m_z;
 
   loadMatricesToClothShader();
 

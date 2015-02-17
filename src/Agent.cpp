@@ -3,8 +3,8 @@
 AgentIdentifier Agent::getIdentifier() const
 {
     AgentIdentifier result;
-    result.m_AgentId = getID();
-    result.m_flockId = getFlockID();
+    result.m_agentID = getID();
+    result.m_flockID = getFlockID();
 
     return result;
 }

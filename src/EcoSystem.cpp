@@ -40,7 +40,7 @@ its never best to use the heap... just unavoidable. :)
   return m_flocks.size() - 1;
 }
 
-std::vector<AgentIdentifier> EcoSystem::getAgentsWithinDistanceOfPosition(ngl::Vec3 _pos, float _distance)
+std::vector<AgentIdentifier> EcoSystem::getAgentsWithinDistanceOfPosition(ngl::Vec3 _pos, float _distance) const
 {
   std::vector<AgentIdentifier> result;
 
@@ -68,7 +68,7 @@ void EcoSystem::updateSystem()
   }
 }
 
-void EcoSystem::getAgentStates(std::vector<ngl::Vec3> & io_positions, std::vector<ngl::Vec3> & io_velocities)
+void EcoSystem::getAgentStates(std::vector<ngl::Vec3> & io_positions, std::vector<ngl::Vec3> & io_velocities) const
 {
   int counter = 0;
   for(size_t i = 0; i < m_flocks.size(); ++i)

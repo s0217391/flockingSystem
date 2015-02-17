@@ -26,15 +26,15 @@ public:
   // returns index of the agent
   inline int addAgentToFlock(int _flock) { return m_flocks[_flock].createAgent(); }
 
-  inline const Agent & getAgent(AgentIdentifier _agent) const {return getFlock(_agent.m_flockId).getAgent(_agent.m_AgentId);}
+  inline const Agent & getAgent(AgentIdentifier _agent) const {return getFlock(_agent.m_flockID).getAgent(_agent.m_agentID);}
   inline const Flock & getFlock(int _flockID) const {return m_flocks[_flockID];}
 
   // fix the return values!
-  std::vector<AgentIdentifier> getAgentsWithinDistanceOfPosition(ngl::Vec3 _pos, float _distance);
+  std::vector<AgentIdentifier> getAgentsWithinDistanceOfPosition(ngl::Vec3 _pos, float _distance) const;
 
   void updateSystem();
 
-  void getAgentStates(std::vector<ngl::Vec3> & io_positions, std::vector<ngl::Vec3> & io_velocities);
+  void getAgentStates(std::vector<ngl::Vec3> & io_positions, std::vector<ngl::Vec3> & io_velocities) const;
 
 private:
   std::vector<Flock> m_flocks;

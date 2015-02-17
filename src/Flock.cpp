@@ -26,7 +26,7 @@ int Flock::createAgent()
   ngl::Random * rand = ngl::Random::instance();
 
   ngl::Vec3 pos = 1 * rand->getRandomVec3();
-  ngl::Vec3 vel = 1 * rand->getRandomVec3();
+  ngl::Vec3 vel = 0.5 * rand->getRandomVec3();
   Agent newA(m_agents.size(), c_flockID, pos, vel);
 
   m_agents.push_back(newA);

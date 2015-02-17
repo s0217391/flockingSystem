@@ -5,8 +5,8 @@
 
 struct AgentIdentifier
 {
-  int m_flockId;
-  int m_AgentId;
+  int m_flockID;
+  int m_agentID;
 };
 
 class Agent
