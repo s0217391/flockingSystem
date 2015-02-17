@@ -27,15 +27,26 @@ public:
   // TODO: how can I get the IBehaviours to be const?
   virtual void updateAgent(Agent & io_agent, const EcoSystem * _system, const std::vector<IBehaviour *> & _behaviours) const = 0;
 
+  virtual IBrain * clone() const = 0;
+
 protected:
   inline IBrain() : m_integrator(0.02) {;}
   ExplicitEulerIntegrator m_integrator;
 };
 
-class AverageBrain : public IBrain
+
+// CURIOUSLY RECURRING TEMPLATE PATTERN
+template <typename Derived>
+class IBrainCRTP : public IBrain
 {
 public:
-  inline AverageBrain() : IBrain() {;}
+  inline virtual IBrain * clone() const {return new Derived(static_cast<Derived const&>(*this));}
+};
+
+class AverageBrain : public IBrainCRTP<AverageBrain>
+{
+public:
+  inline AverageBrain() : IBrainCRTP<AverageBrain>() {;}
 
   // has to update agent but nothing else!!
   // TODO: how can I get the IBehaviours to be const?

@@ -4,24 +4,37 @@
 //Create a new flock: init brain and behaviours as well!
 int EcoSystem::createNewFlock()
 {
-  // TODO: ask JON!!
-  Flock * newFlock = new Flock(m_flocks.size());
+  // This creates a flock on the stack.
+  // once the flock is done, a deep copy is made in the vector.push_back call.
+  // The deep copy relies on the CRTP for the pointer objects (behaviours and brains!!)
 
-  /// Can only do this once there are actual implementations of brain and behaviour
+  // An alternative is to put the flock in the dynamic memory as well put I've been taught to avoid pointers as much as possible
+  // (To reduce chances of memory leaks and gain performance from knowing memory size at compile time)
+  // I wouldn't have used pointers for brains and behaviours but since they're virtual base class, I didn't have a choice
+
+  /* from stackoverflow:
+as a rule of thumb use the stack whenever you can. i.e. when the variable is never needed outside of that scope.
+its faster, causes less fragmentation and is going to avoid the other overheads associated with calling malloc or new.
+allocating off of the stack is a couple of assembler operations,
+malloc or new is several hundred lines of code in an efficient implementation.
+
+its never best to use the heap... just unavoidable. :)
+   */
+
+  Flock newFlock(m_flocks.size());
   //create brain
   IBrain * brain = new AverageBrain(); // Becomes owner
-  newFlock->setBrain(brain);
+  newFlock.setBrain(brain);
   //create behaviours
   IBehaviour * alignBehaviour = new AlignmentBehaviour();
   IBehaviour * separateBehaviour = new SeparationBehaviour();
   IBehaviour * cohesionBehaviour = new CohesionBehaviour();
 
-  newFlock->addBehaviour(alignBehaviour);    // becomes owner
-  newFlock->addBehaviour(separateBehaviour); // becomes owner
-  newFlock->addBehaviour(cohesionBehaviour); // becomes owner
+  newFlock.addBehaviour(alignBehaviour);    // becomes owner
+  newFlock.addBehaviour(separateBehaviour); // becomes owner
+  newFlock.addBehaviour(cohesionBehaviour); // becomes owner
 
-  m_flocks.push_back(*newFlock); //shallow copy suffices. Don't copy the brain or behaviours!! THINK: implicit copy constructor makes a copy of the pointers which is good enough.
-  // BUT, you are ging to delete newFlock... is this a decent solution?
+  m_flocks.push_back(newFlock); // Deep copy made here!
 
   // return index in the list
   return m_flocks.size() - 1;

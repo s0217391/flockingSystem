@@ -2,6 +2,17 @@
 
 #include "Flock.h"
 
+// Deep copy constructor. Relies on Curiously recurring template pattern for the pointer objects.
+Flock::Flock(const Flock & other) : c_flockID(other.c_flockID) //gets the same id... this isn't ideal but for now it will do..
+{
+  for(size_t i = 0; i < other.m_behaviours.size(); ++i)
+  {
+    addBehaviour(other.m_behaviours[i]->clone());
+  }
+
+  setBrain(other.m_brain->clone());
+}
+
 //Flock owns behaviours and brain!
 Flock::~Flock() // delete behaviours and brain
 {
@@ -36,7 +47,7 @@ void Flock::cleanBehaviours()
 // Flock is owner of his brain!! delete the old one
 void Flock::setBrain(IBrain * _brain)
 {
-  if(m_brain != NULL) delete m_brain;
+  if(m_brain == 0) delete m_brain;
   m_brain = _brain;
 }
 

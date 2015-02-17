@@ -3,26 +3,26 @@
 
 #include "IBehaviour.h"
 
-class AlignmentBehaviour : public IBehaviour
+class AlignmentBehaviour : public IBehaviourCRTP<AlignmentBehaviour>
 {
 public:
-  inline AlignmentBehaviour() : IBehaviour() {;}
+  inline AlignmentBehaviour() : IBehaviourCRTP<AlignmentBehaviour>() {;}
 
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const;
 };
 
-class SeparationBehaviour : public IBehaviour
+class SeparationBehaviour : public IBehaviourCRTP<SeparationBehaviour>
 {
 public:
-  inline SeparationBehaviour() : IBehaviour() {;}
+  inline SeparationBehaviour() : IBehaviourCRTP<SeparationBehaviour>() {;}
 
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const;
 };
 
-class CohesionBehaviour : public IBehaviour
+class CohesionBehaviour : public IBehaviourCRTP<CohesionBehaviour>
 {
 public:
-  inline CohesionBehaviour() : IBehaviour() {;}
+  inline CohesionBehaviour() : IBehaviourCRTP<CohesionBehaviour>() {;}
 
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const;
 };

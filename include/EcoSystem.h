@@ -29,7 +29,7 @@ public:
   inline const Agent & getAgent(AgentIdentifier _agent) const {return getFlock(_agent.m_flockId).getAgent(_agent.m_AgentId);}
   inline const Flock & getFlock(int _flockID) const {return m_flocks[_flockID];}
 
-  // Avoid copying Agents.
+  // fix the return values!
   std::vector<AgentIdentifier> getAgentsWithinDistanceOfPosition(ngl::Vec3 _pos, float _distance);
 
   void updateSystem();

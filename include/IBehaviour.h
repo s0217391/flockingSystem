@@ -20,11 +20,23 @@ public:
   // However, it is not allowed to change it
   virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const = 0;
 
+  virtual IBehaviour * clone() const = 0;
+
 protected:
   inline IBehaviour() : m_priority(1) {;}
 
 private:
   int m_priority;
 };
+
+// THIS IS AN EXAMPLE OF THE CURIOUSLY RECURRING TEMPLATE PATTERN -- google this if you forgot.
+
+template <typename Derived>
+class IBehaviourCRTP : public IBehaviour
+{
+public:
+  inline virtual IBehaviour * clone() const {return new Derived(static_cast<Derived const&>(*this));}
+};
+
 
 #endif // IBEHAVIOUR_H
