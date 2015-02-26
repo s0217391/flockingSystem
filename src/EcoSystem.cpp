@@ -23,12 +23,15 @@ its never best to use the heap... just unavoidable. :)
 
   Flock newFlock(m_flocks.size());
   //create brain
-  IBrain * brain = new AverageBrain(); // Becomes owner
+  IBrain * brain = new PriorityBrain(); // Becomes owner
   newFlock.setBrain(brain);
   //create behaviours
   IBehaviour * alignBehaviour = new AlignmentBehaviour();
+  alignBehaviour->setPriority(1);
   IBehaviour * separateBehaviour = new SeparationBehaviour();
+  alignBehaviour->setPriority(0);
   IBehaviour * cohesionBehaviour = new CohesionBehaviour();
+  alignBehaviour->setPriority(1);
 
   newFlock.addBehaviour(alignBehaviour);    // becomes owner
   newFlock.addBehaviour(separateBehaviour); // becomes owner

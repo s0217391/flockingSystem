@@ -23,7 +23,7 @@ public:
   virtual IBehaviour * clone() const = 0;
 
 protected:
-  inline IBehaviour() : m_priority(1) {;}
+  inline IBehaviour() : m_priority(0) {;}
 
 private:
   int m_priority;

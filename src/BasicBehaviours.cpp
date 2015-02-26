@@ -4,14 +4,14 @@
 #include "EcoSystem.h"
 
 // OK lazy bum make these member variables
-float alignmentDistance = 5.0f;
-float alignmentWeight = 1.0f;
+float alignmentDistance = 0.2f;
+float alignmentWeight = 0.0f;
 
-float separationDistance = 0.1f;
-float separationWeight = 1.0f;
+float separationDistance = 1.0f;
+float separationWeight = 0.1f;
 
-float cohesionDistance = 5.0f;
-float cohesionWeight = 1.0f;
+float cohesionDistance = 10.0f;
+float cohesionWeight = 0.1f;
 
 ngl::Vec3 AlignmentBehaviour::computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const
 {
@@ -29,13 +29,14 @@ ngl::Vec3 AlignmentBehaviour::computeForceUpdate(const Agent & _agent, const Eco
     ++count;
   }
 
-  if(count == 0) return ngl::Vec3();
+  if(count == 0) return ngl::Vec3(0, 0, 0);
 
   avg_velocity = (1.0f / (float) count) * avg_velocity;
 
   return alignmentWeight * (avg_velocity - _agent.getVelocity());
 }
 
+// This needs a bound!
 ngl::Vec3 SeparationBehaviour::computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const
 {
   std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), separationDistance);
@@ -51,7 +52,7 @@ ngl::Vec3 SeparationBehaviour::computeForceUpdate(const Agent & _agent, const Ec
     float distance = direction.length();
     direction.normalize();
 
-    direction = (1.0f / distance) * direction;
+    direction = (1.0f / distance) * direction; // BOUND THIS!
     result += direction;
   }
 
@@ -74,7 +75,7 @@ ngl::Vec3 CohesionBehaviour::computeForceUpdate(const Agent & _agent, const EcoS
       ++count;
     }
 
-    if(count == 0) return ngl::Vec3();
+    if(count == 0) return ngl::Vec3(0, 0, 0);
 
     avg_position = (1.0f / (float) count) * avg_position;
 
