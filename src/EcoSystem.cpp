@@ -26,16 +26,19 @@ its never best to use the heap... just unavoidable. :)
   IBrain * brain = new PriorityBrain(); // Becomes owner
   newFlock.setBrain(brain);
   //create behaviours
-  IBehaviour * alignBehaviour = new AlignmentBehaviour(1, 1);
+  IBehaviour * alignBehaviour = new AlignmentBehaviour(2, 1);
   alignBehaviour->setPriority(1);
-  IBehaviour * separateBehaviour = new SeparationBehaviour(1, 1);
-  alignBehaviour->setPriority(0);
-  IBehaviour * cohesionBehaviour = new CohesionBehaviour(1, 5);
-  alignBehaviour->setPriority(1);
+  IBehaviour * separateBehaviour = new SeparationBehaviour(0.1, 0.2);
+  separateBehaviour->setPriority(0);
+  IBehaviour * cohesionBehaviour = new CohesionBehaviour(5, 0.1);
+  cohesionBehaviour->setPriority(1);
+  IBehaviour * migratory = new MigratoryBehaviour(ngl::Vec3(1, 0, 0), 0.1);
+  migratory->setPriority(1);
 
-  newFlock.addBehaviour(alignBehaviour);    // becomes owner
-  newFlock.addBehaviour(separateBehaviour); // becomes owner
-  newFlock.addBehaviour(cohesionBehaviour); // becomes owner
+  newFlock.addBehaviour(alignBehaviour);    // becomes owner !!
+  newFlock.addBehaviour(separateBehaviour); // becomes owner !!
+  newFlock.addBehaviour(cohesionBehaviour); // becomes owner !!
+  newFlock.addBehaviour(migratory);         // becomes owner !!
 
   m_flocks.push_back(newFlock); // Deep copy made here!
 

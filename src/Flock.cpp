@@ -26,8 +26,8 @@ int Flock::createAgent()
   ngl::Random * rand = ngl::Random::instance();
 
   ngl::Vec3 pos = 1 * rand->getRandomVec3();
-  ngl::Vec3 vel = ngl::Vec3();
-  //ngl::Vec3 vel = m_agents.size() == 10 ? 0.5 * rand->getRandomVec3() : ngl::Vec3();
+  //ngl::Vec3 vel = ngl::Vec3();
+  ngl::Vec3 vel = 0.5 * rand->getRandomVec3();
   Agent newA(m_agents.size(), c_flockID, pos, vel);
 
   m_agents.push_back(newA);
@@ -58,5 +58,6 @@ void Flock::updateFlock(EcoSystem * _eSystem)
   for(size_t i = 0; i < m_agents.size(); ++i)
   {
     m_brain->updateAgent(m_agents[i], _eSystem, m_behaviours);
+    m_locomotion.moveAgent(m_agents[i]);
   }
 }

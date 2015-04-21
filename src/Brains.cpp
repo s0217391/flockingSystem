@@ -21,7 +21,6 @@ void AverageBrain::updateAgent(Agent & io_agent, const EcoSystem * _system, cons
   }
 
   io_agent.setSteeringForce(result);
-  m_integrator.UpdateAgent(io_agent);
 }
 
 void PriorityBrain::updateAgent(Agent & io_agent, const EcoSystem * _system, const std::vector<IBehaviour *> & _behaviours) const
@@ -69,5 +68,4 @@ void PriorityBrain::updateAgent(Agent & io_agent, const EcoSystem * _system, con
   }
 
   io_agent.setSteeringForce(result);
-  m_integrator.UpdateAgent(io_agent);
 }

@@ -6,6 +6,7 @@
 #include "Agent.h"
 #include "IBehaviour.h"
 #include "IBrain.h"
+#include "Locomotion.h"
 
 class Flock
 {
@@ -36,6 +37,12 @@ private:
   int c_flockID;
 
   std::vector<Agent> m_agents;
+
+  // An agent has a way he can move. This rules are defined in his Locomotion,
+  // a separate object that converts a steering force into a new position and velocity.
+  // Since all Agents in a flock are the same (for now), this is an attribute of the Flock (just like brain and behaviours).
+  Locomotion m_locomotion;
+
   //For now, all agents have the same brain and behaviours.
   // Worry about behaviour assignment later. Iterative development.
   std::vector<IBehaviour *> m_behaviours;

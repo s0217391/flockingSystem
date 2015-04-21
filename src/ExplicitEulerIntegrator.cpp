@@ -1,8 +1,8 @@
 #include "ExplicitEulerIntegrator.h"
 
-void ExplicitEulerIntegrator::UpdateAgent(Agent & io_agent) const
+void ExplicitEulerIntegrator::updateAgent(Agent & io_agent, ngl::Vec3 _netForce) const
 {
-    ngl::Vec3 velocity = io_agent.getVelocity() + m_timestep * io_agent.getSteeringForce();
+    ngl::Vec3 velocity = io_agent.getVelocity() + m_timestep * _netForce;
 
     ngl::Vec3 position = io_agent.getPosition() + m_timestep * io_agent.getVelocity(); // Explicit
 

@@ -53,4 +53,21 @@ private:
   float m_cohesionWeight;
 };
 
+class MigratoryBehaviour : public IBehaviourCRTP<MigratoryBehaviour>
+{
+public:
+  inline MigratoryBehaviour(ngl::Vec3 _direction, float _weight) : IBehaviourCRTP<MigratoryBehaviour>(),
+                                                             m_migratoryDirection(_direction),
+                                                             m_migratoryWeight(_weight) {;}
+
+
+  inline virtual ngl::Vec3 computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const {return m_migratoryWeight * m_migratoryDirection;}
+
+private:
+  // The direction of the migratory urge
+  ngl::Vec3 m_migratoryDirection;
+  // The weight given to the force after it is computed.
+  float m_migratoryWeight;
+};
+
 #endif // BASICBEHAVIOURS_H

@@ -16,7 +16,6 @@ class EcoSystem;
  *
  * it cannot change itself when doing this (should work the same for every agent), and it cannot change anything but the agent
  *
- *
  * For now, IBrain can include integration. THIS'LL HAVE TO MOVE TO locomotion once you have it!!
  */
 class IBrain
@@ -30,8 +29,7 @@ public:
   virtual IBrain * clone() const = 0;
 
 protected:
-  inline IBrain() : m_integrator(0.02) {;}
-  ExplicitEulerIntegrator m_integrator;
+  inline IBrain() {;}
 };
 
 

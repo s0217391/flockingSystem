@@ -8,7 +8,10 @@ class ExplicitEulerIntegrator
 public:
     inline ExplicitEulerIntegrator(float _timestep) : m_timestep(_timestep) {;}
 
-    void UpdateAgent(Agent & io_agent) const;
+    void updateAgent(Agent & io_agent, ngl::Vec3 _netForce) const;
+
+    // Update agent without passing a net force. Will use the Agents steering force directly.
+    inline void updateAgent(Agent & io_agent) const {updateAgent(io_agent, io_agent.getSteeringForce());}
 
 private:
     float m_timestep;
