@@ -3,19 +3,9 @@
 #include "BasicBehaviours.h"
 #include "EcoSystem.h"
 
-// OK lazy bum make these member variables
-float alignmentDistance = 0.2f;
-float alignmentWeight = 0.0f;
-
-float separationDistance = 1.0f;
-float separationWeight = 0.1f;
-
-float cohesionDistance = 10.0f;
-float cohesionWeight = 0.1f;
-
 ngl::Vec3 AlignmentBehaviour::computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const
 {
-  std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), alignmentDistance);
+  std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), m_alignmentDistance);
 
   ngl::Vec3 avg_velocity(0, 0, 0);
   int count = 0;
@@ -33,13 +23,13 @@ ngl::Vec3 AlignmentBehaviour::computeForceUpdate(const Agent & _agent, const Eco
 
   avg_velocity = (1.0f / (float) count) * avg_velocity;
 
-  return alignmentWeight * (avg_velocity - _agent.getVelocity());
+  return m_alignmentWeight * (avg_velocity - _agent.getVelocity());
 }
 
 // This needs a bound!
 ngl::Vec3 SeparationBehaviour::computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const
 {
-  std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), separationDistance);
+  std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), m_separationDistance);
 
   ngl::Vec3 result(0, 0, 0);
   for(size_t i = 0; i < surroundings.size(); ++i)
@@ -56,12 +46,12 @@ ngl::Vec3 SeparationBehaviour::computeForceUpdate(const Agent & _agent, const Ec
     result += direction;
   }
 
-  return separationWeight * result;
+  return m_separationWeight * result;
 }
 
 ngl::Vec3 CohesionBehaviour::computeForceUpdate(const Agent & _agent, const EcoSystem * _system) const
 {
-    std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), cohesionDistance);
+    std::vector<AgentIdentifier> surroundings = _system->getAgentsWithinDistanceOfPosition(_agent.getPosition(), m_cohesionDistance);
 
     ngl::Vec3 avg_position(0, 0, 0);
     int count = 0;
@@ -79,5 +69,5 @@ ngl::Vec3 CohesionBehaviour::computeForceUpdate(const Agent & _agent, const EcoS
 
     avg_position = (1.0f / (float) count) * avg_position;
 
-    return cohesionWeight * (avg_position - _agent.getPosition());
+    return m_cohesionWeight * (avg_position - _agent.getPosition());
 }

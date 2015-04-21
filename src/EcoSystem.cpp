@@ -10,7 +10,7 @@ int EcoSystem::createNewFlock()
 
   // An alternative is to put the flock in the dynamic memory as well put I've been taught to avoid pointers as much as possible
   // (To reduce chances of memory leaks and gain performance from knowing memory size at compile time)
-  // I wouldn't have used pointers for brains and behaviours but since they're virtual base class, I didn't have a choice
+  // I wouldn't have used pointers for brains and behaviours but since they're virtual base class, I didn't have a choice.
 
   /* from stackoverflow:
 as a rule of thumb use the stack whenever you can. i.e. when the variable is never needed outside of that scope.
@@ -26,11 +26,11 @@ its never best to use the heap... just unavoidable. :)
   IBrain * brain = new PriorityBrain(); // Becomes owner
   newFlock.setBrain(brain);
   //create behaviours
-  IBehaviour * alignBehaviour = new AlignmentBehaviour();
+  IBehaviour * alignBehaviour = new AlignmentBehaviour(1, 1);
   alignBehaviour->setPriority(1);
-  IBehaviour * separateBehaviour = new SeparationBehaviour();
+  IBehaviour * separateBehaviour = new SeparationBehaviour(1, 1);
   alignBehaviour->setPriority(0);
-  IBehaviour * cohesionBehaviour = new CohesionBehaviour();
+  IBehaviour * cohesionBehaviour = new CohesionBehaviour(1, 5);
   alignBehaviour->setPriority(1);
 
   newFlock.addBehaviour(alignBehaviour);    // becomes owner
