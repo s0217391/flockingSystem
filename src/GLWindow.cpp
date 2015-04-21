@@ -39,7 +39,7 @@ void GLWindow::initializeGL()
   //CAMERA ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   // Now we will create a basic Camera from the graphics library
   // First create Values for the camera position
-  ngl::Vec3 from(10,10,10);
+  ngl::Vec3 from(0,0,10);
   ngl::Vec3 to(0,0,0);
   ngl::Vec3 up(0,1,0);
   // now load to our new camera

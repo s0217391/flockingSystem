@@ -43,10 +43,33 @@ public:
   inline virtual IBrain * clone() const {return new Derived(static_cast<Derived const&>(*this));}
 };
 
+
+
+
+
+/*
+ * Brain that averages all behaviours
+ */
 class AverageBrain : public IBrainCRTP<AverageBrain>
 {
 public:
   inline AverageBrain() : IBrainCRTP<AverageBrain>() {;}
+
+  // has to update agent but nothing else!!
+  // TODO: how can I get the IBehaviours to be const?
+  virtual void updateAgent(Agent & io_agent, const EcoSystem * _system, const std::vector<IBehaviour *> & _behaviours) const;
+};
+
+
+
+
+/*
+ * Brain that averages all behaviours of the highest available priority
+ */
+class PriorityBrain : public IBrainCRTP<PriorityBrain>
+{
+public:
+  inline PriorityBrain() : IBrainCRTP<PriorityBrain>() {;}
 
   // has to update agent but nothing else!!
   // TODO: how can I get the IBehaviours to be const?
